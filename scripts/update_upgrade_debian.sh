@@ -1,1 +1,1 @@
-sudo apt update && sudo apt upgrade -y && sudo apt install -f
+apt update && apt dist-upgrade -y && apt upgrade -y && apt install -f
