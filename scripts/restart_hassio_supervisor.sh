@@ -1,1 +1,1 @@
-sudo docker restart hassio_supervisor
+docker restart hassio_supervisor
