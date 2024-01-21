@@ -1,0 +1,3 @@
+# Sign commits with SSH keys
+# https://docs.gitlab.com/ee/user/project/repository/signed_commits/ssh.html
+git commit -S -m "My commit msg"
