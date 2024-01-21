@@ -1,0 +1,14 @@
+# deb cdrom:[Debian GNU/Linux 12.4.0 _Bookworm_ - Official amd64 DVD Binary-1 with firmware 20231210-17:57]/ bookworm main non-free-firmware# deb cdrom:[Debian GNU/Linux 12.4.0 _Bookworm_ - Official amd64 DVD Binary-1 with firmware 20231210-17:57]/ bookworm main non-free-firmware
+
+# sources for bookworm stable
+deb     http://deb.debian.org/debian/              bookworm          main contrib non-free-firmware non-free
+deb-src http://deb.debian.org/debian/              bookworm          main contrib non-free-firmware non-free
+
+# sources for bookworm stable
+deb     http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
+deb-src http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
+
+# bookworm-updates, to get updates before a point release is made;
+# see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
+deb     http://deb.debian.org/debian/              bookworm-updates  main contrib non-free-firmware non-free
+deb-src http://deb.debian.org/debian/              bookworm-updates  main contrib non-free-firmware non-free
