@@ -1,0 +1,40 @@
+https://github.com/home-assistant/supervisor/issues/4827#issuecomment-1901827984
+
+# To find the history of recent upgrade
+cat /var/log/apt/history.log
+
+# upgrdes related to docker from history
+docker-compose-plugin:amd64 (2.21.0-1~debian.12~bookworm, 2.24.1-1~debian.12~bookworm),
+docker-ce-cli:amd64 (5:24.0.7-1~debian.12~bookworm, 5:25.0.0-1~debian.12~bookworm),
+docker-buildx-plugin:amd64 (0.11.2-1~debian.12~bookworm, 0.12.1-1~debian.12~bookworm),
+docker-ce:amd64 (5:24.0.7-1~debian.12~bookworm, 5:25.0.0-1~debian.12~bookworm),
+docker-ce-rootless-extras:amd64 (5:24.0.7-1~debian.12~bookworm, 5:25.0.0-1~debian.12~bookworm)
+
+# To rollback to last version of docker 
+sudo apt install \
+docker-compose-plugin=2.21.0-1~debian.12~bookworm \
+docker-ce-cli=5:24.0.7-1~debian.12~bookworm \
+docker-buildx-plugin=0.11.2-1~debian.12~bookworm \
+docker-ce=5:24.0.7-1~debian.12~bookworm \
+docker-ce-rootless-extras=5:24.0.7-1~debian.12~bookworm
+
+# To hold the version of docker until there is a fix
+sudo apt-mark hold \
+docker-compose-plugin \
+docker-ce-cli \
+docker-buildx-plugin \
+docker-ce \
+docker-ce-rootless-extras
+
+# To unhold the version of doceker after the fix
+sudo apt-mark unhold \
+docker-compose-plugin \
+docker-ce-cli \
+docker-buildx-plugin \
+docker-ce \
+docker-ce-rootless-extras
+
+# To unhold any hold version 
+apt-mark showhold
+apt-mark unhold $(apt-mark showhold)
+
